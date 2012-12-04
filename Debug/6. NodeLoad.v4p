@@ -1,0 +1,231 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.3.dtd" >
+   <PATCH nodename="C:\vvvv\projects\Debug\6. NodeLoad.v4p" systemname="6. NodeLoad" filename="C:\vvvv\projects\Debug\6. NodeLoad.v4p">
+   <BOUNDS type="Window" left="7860" top="5490" width="11220" height="6000">
+   </BOUNDS>
+   <NODE systemname="Renderer (OpenGL Fast)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Renderer (OpenGL Fast)" componentmode="Hidden" id="0" managers="boygroup">
+   <BOUNDS type="Node" left="2130" top="7185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Width" slicecount="1" values="1400">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="1050">
+   </PIN>
+   <PIN pinname="Fullscreen" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Boygroup Server" filename="..\Common\Network\Boygroup Server.v4p" nodename="C:\vvvv\projects\Common\Network\Boygroup Server.v4p" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="1500" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GE (Value)" nodename="GE (Value)" componentmode="Hidden" id="2" managers="boygroup">
+   <BOUNDS type="Node" left="2625" top="6660" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="0" dstpinname="Fullscreen">
+   </LINK>
+   <NODE systemname="NodeLoad (openFrameworks)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="NodeLoad (openFrameworks)" componentmode="Hidden" id="3" managers="boygroup">
+   <BOUNDS type="Node" left="2130" top="2520" width="4800" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="On Reload" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" encoded="0" values="Z:\openFrameworks\addons\ofxVVVV\testNode\bin\testNode.dll">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Auto Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="624.1451179">
+   </PIN>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="4" managers="">
+   <BOUNDS type="Node" left="4515" top="3090" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="On Reload" dstnodeid="4" dstpinname="Set">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)" managers="">
+   <BOUNDS type="Node" left="4515" top="3705" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4515" top="3705" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="5" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="6" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6870" top="3075" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6870" top="3075" width="6120" height="975">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Status">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Status" dstnodeid="6" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Stereo ViewProjection" filename="..\Common\Transform\Stereo ViewProjection.v4p" nodename="..\Common\Transform\Stereo ViewProjection.v4p" componentmode="Hidden" id="7" managers="boygroup">
+   <BOUNDS type="Node" left="2115" top="4845" width="2835" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   <PIN pinname="Eye Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="ClientID" dstnodeid="2" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2895" top="3960" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="3960" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="-0.1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Interocular Distance">
+   </LINK>
+   <NODE systemname="Quad (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Quad (OpenGL)" componentmode="Hidden" id="9" managers="boygroup">
+   <BOUNDS type="Node" left="1215" top="4005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10" managers="boygroup">
+   <BOUNDS type="Node" left="1200" top="3075" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="9" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Cross (3d)" nodename="Cross (3d)" componentmode="Hidden" id="11" managers="boygroup">
+   <BOUNDS type="Node" left="645" top="2535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X Out" visible="1">
+   </PIN>
+   <PIN pinname="Y Out" visible="1">
+   </PIN>
+   <PIN pinname="Z Out" visible="1">
+   </PIN>
+   <PIN pinname="X In" visible="1">
+   </PIN>
+   <PIN pinname="Y In" visible="1">
+   </PIN>
+   <PIN pinname="Z In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="X Out" dstnodeid="10" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y Out" dstnodeid="10" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Z Out" dstnodeid="10" dstpinname="Z">
+   </LINK>
+   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="630" top="2145" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="X In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="Y In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="Z In">
+   </LINK>
+   <NODE systemname="GraphicsMode (OpenGL Join)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="GraphicsMode (OpenGL Join)" componentmode="Hidden" id="13" managers="boygroup">
+   <BOUNDS type="Node" left="2790" top="6135" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Stereo" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="0" dstpinname="Mode">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="ClientID" dstnodeid="7" dstpinname="ClientID">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="7" dstpinname="Layer">
+   </LINK>
+   <NODE systemname="Translate (Transform Vector)" nodename="Translate (Transform Vector)" componentmode="Hidden" id="14" managers="boygroup">
+   <BOUNDS type="Node" left="2505" top="3420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Transform Out" dstnodeid="7" dstpinname="Eye Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3240" top="1635" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3240" top="1635" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,1.8,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="14" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Clock (Network Boygroup)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Clock (Network Boygroup)" componentmode="Hidden" id="16" managers="boygroup">
+   <BOUNDS type="Node" left="4785" top="1725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Time" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Cons (OpenGL)" componentmode="Hidden" id="17" managers="boygroup">
+   <BOUNDS type="Node" left="2115" top="5505" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Layer" dstnodeid="0" dstpinname="Input">
+   </LINK>
+   </PATCH>

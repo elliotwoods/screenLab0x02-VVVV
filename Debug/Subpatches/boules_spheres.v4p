@@ -1,0 +1,239 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\vvvv\projects\Debug\Subpatches\boules_spheres.v4p" systemname="boules_spheres" filename="C:\vvvv\projects\Debug\Subpatches\boules_spheres.v4p">
+   <BOUNDS type="Window" left="870" top="3435" width="9000" height="6000">
+   </BOUNDS>
+   <NODE nodename="Sphere (EX9.Geometry)" componentmode="Hidden" id="0" systemname="Sphere (EX9.Geometry)">
+   <BOUNDS type="Node" left="1260" top="1725" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="27">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="42">
+   </PIN>
+   </NODE>
+   <NODE nodename=":EFFECTS:\PhongPoint.fx" componentmode="Hidden" id="1" systemname="PhongPoint (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\PhongPoint.fx">
+   <BOUNDS type="Node" left="1365" top="3030" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1365" top="3030" width="6000" height="6000">
+   </BOUNDS>
+   <BOUNDS type="Window" left="18075" top="13455" width="12000" height="12000">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Light Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Light Attenuation 0" slicecount="1" values="0.17">
+   </PIN>
+   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.11">
+   </PIN>
+   <PIN pinname="Light Attenuation 2" slicecount="1" values="0.13">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.54295,0.54295,0.54295,1.00000|">
+   </PIN>
+   <PIN pinname="Specular Color" slicecount="1" values="|0.26522,0.26522,0.26522,1.00000|">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="14.09">
+   </PIN>
+   <PIN pinname="Light Range" slicecount="1" values="27.33">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
+   </LINK>
+   <NODE nodename="Translate (Transform)" componentmode="Hidden" id="4" systemname="Translate (Transform)">
+   <BOUNDS type="Node" left="2385" top="1860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="Rotate (Transform)" componentmode="Hidden" id="6" systemname="Rotate (Transform)">
+   <BOUNDS type="Node" left="2400" top="1440" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Transform Out" dstnodeid="4" dstpinname="Transform In">
+   </LINK>
+   <NODE nodename="RandomSpread (Spreads)" componentmode="Hidden" id="10" systemname="RandomSpread (Spreads)">
+   <BOUNDS type="Node" left="4200" top="1125" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="131">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="6" dstpinname="Z">
+   </LINK>
+   <NODE componentmode="Hidden" id="11" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="0" left="3855" top="435" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="129">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="6" dstpinname="Y">
+   </LINK>
+   <NODE nodename="UniformScale (Transform)" componentmode="Hidden" id="12" systemname="UniformScale (Transform)">
+   <BOUNDS type="Node" left="2400" top="2415" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="13" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="0" left="3465" top="1995" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="9">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="1.04">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1.14">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="12" dstpinname="XYZ">
+   </LINK>
+   <NODE nodename="Vector (3d Join)" componentmode="Hidden" id="15" systemname="Vector (3d Join)">
+   <BOUNDS type="Node" left="5775" top="2490" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="2.13">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="-5.69">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="XYZ" dstnodeid="1" dstpinname="Light Position XYZ">
+   </LINK>
+   <NODE componentmode="Hidden" id="16" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="0" left="1995" top="345" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="84">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="6" dstpinname="X">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="17" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="1890" top="3900" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1890" top="3900" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Layer">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="5715" top="165" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5715" top="165" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Width">
+   </LINK>
+   <NODE systemname="Constant (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\Constant.fx" nodename="Constant (EX9.Effect)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="4605" top="3345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="19" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="19" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Layer" dstnodeid="17" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="Fog (EX9.RenderState)" nodename="Fog (EX9.RenderState)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="5895" top="1230" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Enable" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pixel Fog Mode" slicecount="1" values="Linear">
+   </PIN>
+   <PIN pinname="Range To" slicecount="1" values="5.88">
+   </PIN>
+   <PIN pinname="Range From" slicecount="1" values="4.92">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Render State Out" dstnodeid="19" dstpinname="Render State">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="7380" top="900" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7380" top="900" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="20" dstpinname="Enable">
+   </LINK>
+   </PATCH>

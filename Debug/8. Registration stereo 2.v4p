@@ -1,0 +1,619 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.3.dtd" >
+   <PATCH nodename="C:\vvvv\projects\Debug\8. Registration stereo 2.v4p" systemname="7. Registration stereo" filename="C:\vvvv\projects\Debug\7. Registration stereo.v4p">
+   <BOUNDS type="Window" left="7170" top="3075" width="11220" height="6000">
+   </BOUNDS>
+   <NODE systemname="Boygroup Server" filename="..\Common\Network\Boygroup Server.v4p" nodename="C:\vvvv\projects\Common\Network\Boygroup Server.v4p" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1500" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="4" managers="">
+   <BOUNDS type="Node" left="4515" top="3090" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)" managers="">
+   <BOUNDS type="Node" left="4515" top="3705" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4515" top="3705" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="5" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2895" top="3960" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="3960" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Quad (OpenGL)" componentmode="Hidden" id="9" managers="boygroup">
+   <BOUNDS type="Node" left="1215" top="4005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10" managers="boygroup">
+   <BOUNDS type="Node" left="1200" top="3075" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="9" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Cross (3d)" nodename="Cross (3d)" componentmode="Hidden" id="11" managers="boygroup">
+   <BOUNDS type="Node" left="645" top="2535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X Out" visible="1">
+   </PIN>
+   <PIN pinname="Y Out" visible="1">
+   </PIN>
+   <PIN pinname="Z Out" visible="1">
+   </PIN>
+   <PIN pinname="X In" visible="1">
+   </PIN>
+   <PIN pinname="Y In" visible="1">
+   </PIN>
+   <PIN pinname="Z In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="X Out" dstnodeid="10" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y Out" dstnodeid="10" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Z Out" dstnodeid="10" dstpinname="Z">
+   </LINK>
+   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="630" top="2145" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="X In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="Y In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="Z In">
+   </LINK>
+   <NODE systemname="Translate (Transform Vector)" nodename="Translate (Transform Vector)" componentmode="Hidden" id="14" managers="boygroup">
+   <BOUNDS type="Node" left="2505" top="3420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3240" top="1635" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3240" top="1635" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,0.32,0.92">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="14" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Clock (Network Boygroup)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Clock (Network Boygroup)" componentmode="Hidden" id="16" managers="boygroup">
+   <BOUNDS type="Node" left="4785" top="1725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Time" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Projection Space Adjustment" filename="..\Common\Transform\Projection Space Adjustment.v4p" componentmode="Hidden" id="20" nodename="..\Common\Transform\Projection Space Adjustment.v4p" managers="boygroup">
+   <BOUNDS type="Node" left="2130" top="8745" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2130" top="8745" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2160" top="4980" width="9000" height="8070">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Client ID" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" slicecount="14" values="0.978,0.96,0.955,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02">
+   </PIN>
+   <PIN pinname="ScaleX" slicecount="14" values="0.998,0.986,0.889,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01">
+   </PIN>
+   <PIN pinname="TranslateY" slicecount="14" values="-0.003,0.002,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="14" values="-0.001,0.01,-0.082,0,0,0,0,0,0,0,0,0,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="ClientID" dstnodeid="20" dstpinname="Client ID">
+   </LINK>
+   <NODE systemname="NodeLoad (openFrameworks)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="NodeLoad (openFrameworks)" componentmode="Hidden" id="21" managers="boygroup">
+   <BOUNDS type="Node" left="2115" top="2475" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" encoded="0" values="Z:\openFrameworks\addons\ofxVVVV\testNode\bin\testNode.dll">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="873.4018309">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.001">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="22" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2910" top="2910" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2910" top="2910" width="1395" height="240">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Status" dstnodeid="22" dstpinname="Input String">
+   </LINK>
+   <NODE id="44" systemname="Cons (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Cons (OpenGL)" componentmode="Hidden" hiddenwhenlocked="0" managers="boygroup">
+   <PIN pinname="Input" visible="1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Node" width="1500" height="270" left="7485" top="5010">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="0" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Input 2" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="Output" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Floor grid" filename="..\Common\Patterns\Floor grid.v4p" nodename="..\Common\Patterns\Floor grid.v4p" componentmode="InAWindow" id="46" managers="boygroup">
+   <BOUNDS type="Node" left="8921" top="4513" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5646" top="1078" width="6550" height="6870">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11640" top="7500" width="6555" height="6870">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color - Color" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="47" managers="boygroup">
+   <BOUNDS type="Node" left="8880" top="3195" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="2.24">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.975">
+   </PIN>
+   </NODE>
+   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="9870" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Hue" slicecount="1" values="0.66">
+   </PIN>
+   <PIN pinname="Lightness" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="48" srcpinname="Output" dstnodeid="46" dstpinname="Color - Color">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="49" managers="boygroup">
+   <BOUNDS type="Node" left="7695" top="3255" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="50" managers="boygroup">
+   <BOUNDS type="Node" left="2505" top="4545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Transform Out" dstnodeid="50" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Quad (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Quad (OpenGL)" componentmode="Hidden" id="51" managers="boygroup">
+   <BOUNDS type="Node" left="5880" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Cons (OpenGL)" componentmode="Hidden" id="52" managers="boygroup">
+   <BOUNDS type="Node" left="6750" top="7575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="53" managers="boygroup">
+   <BOUNDS type="Node" left="6015" top="2700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.85">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="6225" top="1710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="CircularSpread (Spreads)" nodename="CircularSpread (Spreads)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="6045" top="2325" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Phase" visible="1">
+   </PIN>
+   <PIN pinname="Output X" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Factor" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Output X" dstnodeid="53" dstpinname="X">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="56" managers="boygroup">
+   <BOUNDS type="Node" left="9030" top="3960" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="57" managers="boygroup">
+   <BOUNDS type="Node" left="8880" top="3540" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.129">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.095">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Transform Out" dstnodeid="57" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="58" managers="boygroup">
+   <BOUNDS type="Node" left="8925" top="2400" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="58" srcpinname="Transform Out" dstnodeid="47" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="57" srcpinname="Transform Out" dstnodeid="56" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="7305" top="1935" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Time" dstnodeid="59" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Output" dstnodeid="55" dstpinname="Phase">
+   </LINK>
+   <NODE systemname="Mono ViewProjection" filename="..\Common\Transform\Mono ViewProjection.v4p" nodename="..\Common\Transform\Mono ViewProjection.v4p" componentmode="Hidden" id="60" managers="boygroup">
+   <BOUNDS type="Node" left="2955" top="5730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   <PIN pinname="View Out" visible="1">
+   </PIN>
+   <PIN pinname="Projection Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="63" managers="boygroup">
+   <BOUNDS type="Node" left="2145" top="8055" width="1635" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Action" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="65" managers="boygroup">
+   <BOUNDS type="Node" left="2145" top="7155" width="1635" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Action" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="66" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3990" top="4530" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3990" top="4530" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0.03,1.8,-1.58">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="66" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Eye Position">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="ClientID" dstnodeid="60" dstpinname="ClientID">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Mono ViewProjection" filename="..\Common\Transform\Mono ViewProjection.v4p" nodename="..\Common\Transform\Mono ViewProjection.v4p" componentmode="Hidden" id="68" managers="boygroup">
+   <BOUNDS type="Node" left="4860" top="5715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="View Out" visible="1">
+   </PIN>
+   <PIN pinname="Projection Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (OpenGL Apply, Stereo)" nodename="Transform (OpenGL Apply, Stereo)" componentmode="Hidden" id="64" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" managers="boygroup">
+   <BOUNDS type="Node" left="2940" top="6465" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Modelview">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Left" visible="1">
+   </PIN>
+   <PIN pinname="Right" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="64" srcpinname="Action" dstnodeid="65" dstpinname="Action">
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="View Out" dstnodeid="64" dstpinname="Left">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="View Out" dstnodeid="64" dstpinname="Right">
+   </LINK>
+   <NODE systemname="Transform (OpenGL Apply, Stereo)" nodename="Transform (OpenGL Apply, Stereo)" componentmode="Hidden" id="62" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" managers="boygroup">
+   <BOUNDS type="Node" left="2940" top="7665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Projection">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Left" visible="1">
+   </PIN>
+   <PIN pinname="Right" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="62" srcpinname="Action" dstnodeid="63" dstpinname="Action">
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="Projection Out" dstnodeid="62" dstpinname="Left">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Projection Out" dstnodeid="62" dstpinname="Right">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="69" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4950" top="4530" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4950" top="4530" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.03,1.8,-1.58">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="68" dstpinname="Eye Position">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="ClientID" dstnodeid="68" dstpinname="ClientID">
+   </LINK>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="70" managers="boygroup">
+   <BOUNDS type="Node" left="7245" top="7035" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (OpenGL Transform)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Transform (OpenGL Transform)" componentmode="Hidden" id="71" managers="boygroup">
+   <BOUNDS type="Node" left="7500" top="6510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="71" srcpinname="Action" dstnodeid="70" dstpinname="Action">
+   </LINK>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="72" managers="boygroup">
+   <BOUNDS type="Node" left="7500" top="5865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="72" srcpinname="Transform Out" dstnodeid="71" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="73" managers="boygroup">
+   <BOUNDS type="Node" left="7545" top="5490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="73" srcpinname="Transform Out" dstnodeid="72" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="74" managers="boygroup">
+   <BOUNDS type="Node" left="4755" top="2160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Time" dstnodeid="74" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="74" srcpinname="Output" dstnodeid="21" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Quad (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Quad (OpenGL)" componentmode="Hidden" id="75" managers="boygroup">
+   <BOUNDS type="Node" left="2145" top="6255" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="46" srcpinname="Output" dstnodeid="44" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Output Screen" filename="..\Common\Output\Output Screen.v4p" nodename="Output Screen" componentmode="Hidden" id="80" managers="boygroup">
+   <BOUNDS type="Node" left="2145" top="9435" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Kill Clients" filename="..\Common\Utils\Kill Clients.v4p" componentmode="Hidden" id="81" nodename="..\Common\Utils\Kill Clients.v4p" managers="boygroup">
+   <BOUNDS type="Node" left="5640" top="9420" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5640" top="9420" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="5490" top="9600" width="9000" height="6000">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="82" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="5640" top="8445" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5640" top="8445" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="82" srcpinname="Y Output Value" dstnodeid="81" dstpinname="Kill">
+   </LINK>
+   <LINK srcnodeid="63" srcpinname="Layer" dstnodeid="20" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="80" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="65" srcpinname="Layer" dstnodeid="63" dstpinname="Layer">
+   </LINK>
+   <NODE systemname="NodeLoad (openFrameworks)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="NodeLoad (openFrameworks)" componentmode="Hidden" id="83" managers="boygroup">
+   <BOUNDS type="Node" left="4890" top="7410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" encoded="0" values="Z:\openFrameworks\apps\ScreenLab\TestPattern\bin\testNode.dll">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Auto Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="83" srcpinname="Layer" dstnodeid="65" dstpinname="Layer">
+   </LINK>
+   </PATCH>

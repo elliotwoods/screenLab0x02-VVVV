@@ -1,0 +1,139 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="Z:\projects\debug\1. Connection tests.v4p" systemname="1. Connection tests" filename="Z:\projects\debug\1. Connection tests.v4p">
+   <BOUNDS type="Window" left="1980" top="3990" width="11505" height="9615">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="0" managers="boygroup">
+   <BOUNDS type="Node" left="2370" top="7560" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2370" top="7560" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11070" top="4545" width="6120" height="4860">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Fullscreen" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D16">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="1" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4335" top="495" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4335" top="495" width="2535" height="705">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="3" encoded="0" values="146.87.67.12,146.87.67.11,146.87.67.18">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" encoded="0" values="192.168.1.1">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="IP">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE systemname="IP (Network)" nodename="IP (Network)" componentmode="Hidden" id="2" managers="boygroup">
+   <BOUNDS type="Node" left="1995" top="1365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="IP" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Text (EX9)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Text (EX9)" componentmode="Hidden" id="3" managers="boygroup">
+   <BOUNDS type="Node" left="2370" top="3360" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Text" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="IP" dstnodeid="3" dstpinname="Text">
+   </LINK>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="4" managers="boygroup">
+   <BOUNDS type="Node" left="2520" top="2670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.33">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Transform Out" dstnodeid="3" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Boygroup (VVVV Client)" nodename="Boygroup (VVVV Client)" componentmode="Hidden" id="6" managers="boygroup">
+   <BOUNDS type="Node" left="3150" top="3735" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ServerID" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GE (Value)" nodename="GE (Value)" componentmode="Hidden" id="7" managers="boygroup">
+   <BOUNDS type="Node" left="3150" top="4125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="ClientID" dstnodeid="7" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="PerspectiveLookAtRect (Transform ViewProjection)" filename="%VVVV%\lib\nodes\modules\Transform\PerspectiveLookAtRect (Transform ViewProjection).v4p" nodename="PerspectiveLookAtRect (Transform ViewProjection)" componentmode="Hidden" id="9" managers="boygroup">
+   <BOUNDS type="Node" left="3510" top="6990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Out" visible="1">
+   </PIN>
+   <PIN pinname="Projection Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="10" managers="boygroup">
+   <BOUNDS type="Node" left="4230" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="11" managers="boygroup">
+   <BOUNDS type="Node" left="2370" top="5685" width="3750" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="WithinNormalizedProjection (Transform)" nodename="WithinNormalizedProjection (Transform)" componentmode="Hidden" id="12" managers="boygroup">
+   <BOUNDS type="Node" left="2520" top="2145" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="4" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="View Out" dstnodeid="0" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Projection Out" dstnodeid="0" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Boygroup Server" filename="..\common\Network\Boygroup Server.v4p" nodename="..\common\Network\Boygroup Server.v4p" componentmode="InAWindow" id="28">
+   <BOUNDS type="Node" left="6660" top="2820" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   </PATCH>

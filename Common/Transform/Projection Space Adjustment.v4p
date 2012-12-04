@@ -1,0 +1,287 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.3.dtd" >
+   <PATCH nodename="C:\vvvv\projects\Common\Transform\Projection Space Adjustment.v4p" systemname="Projection Space Adjustment" filename="C:\vvvv\projects\Common\Transform\Projection Space Adjustment.v4p">
+   <BOUNDS type="Window" left="2160" top="4980" width="9000" height="8070">
+   </BOUNDS>
+   <NODE systemname="Cons (OpenGL)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Cons (OpenGL)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1335" top="6630" width="5040" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="2" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="1350" top="225" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1350" top="225" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Input">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="1335" top="7740" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1335" top="7740" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Output">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
+   <BOUNDS type="Node" left="5400" top="135" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5400" top="135" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Client ID|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2910" top="4620" width="2970" height="270">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (OpenGL Transform)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Transform (OpenGL Transform)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2925" top="5655" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Projection">
+   </PIN>
+   <PIN pinname="Method" slicecount="1" values="Multiply">
+   </PIN>
+   </NODE>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1335" top="6210" width="3195" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Action" dstnodeid="8" dstpinname="Action">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3075" top="615" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3075" top="615" width="495" height="2895">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="14" values="-0.001,0.01,-0.082,0,0,0,0,0,0,0,0,0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="TranslateX">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="14">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="6" dstpinname="TranslateX">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3525" top="615" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3525" top="615" width="495" height="2895">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="14" values="-0.003,0.002,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="TranslateY">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="14">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="6" dstpinname="TranslateY">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4125" top="615" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4125" top="615" width="495" height="2895">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="14" values="0.998,0.986,0.889,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01,1.01">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="ScaleX">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="14">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4575" top="615" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4575" top="615" width="495" height="2895">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="14" values="0.978,0.96,0.955,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="ScaleY">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="14">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="6" dstpinname="ScaleX">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="6" dstpinname="ScaleY">
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="2910" top="5250" width="2550" height="270">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output Node" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Transform Out" dstnodeid="13" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Index">
+   </LINK>
+   <NODE systemname="Transform (OpenGL Transform)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Transform (OpenGL Transform)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="6585" top="5460" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Method" slicecount="1" values="Load">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Modelview">
+   </PIN>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (OpenGL Transform)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Transform (OpenGL Transform)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="6555" top="4560" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Method" slicecount="1" values="Load">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Projection">
+   </PIN>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="6300" top="4950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Action" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Action" dstnodeid="17" dstpinname="Action">
+   </LINK>
+   <NODE systemname="Apply (OpenGL Apply)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OpenGL.dll" nodename="Apply (OpenGL Apply)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="6315" top="5925" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Action" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="18" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="1" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output Node" dstnodeid="16" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Action" dstnodeid="18" dstpinname="Action">
+   </LINK>
+   <NODE systemname="Registration Points" filename="..\Patterns\Registration Points.v4p" nodename="..\Patterns\Registration Points.v4p" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="6300" top="3375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="8415" top="6255" width="6555" height="6870">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="17" dstpinname="Layer">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="24">
+   <BOUNDS type="Node" left="6300" top="150" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6300" top="150" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Show">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="8" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
