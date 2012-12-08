@@ -1,0 +1,5 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="E:\project files\screenlab0x02\screenLab0x02-VVVV\Debug\Subpatches\octave mesh.v4p" systemname="octave mesh" filename="E:\project files\screenlab0x02\screenLab0x02-VVVV\Debug\Subpatches\octave mesh.v4p">
+   <BOUNDS type="Window" left="2340" top="2190" width="9000" height="6000">
+   </BOUNDS>
+   </PATCH>

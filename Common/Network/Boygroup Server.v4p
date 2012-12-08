@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="Z:\projects\common\Network\Boygroup Server.v4p" systemname="Boygroup Server" filename="Z:\projects\common\Network\Boygroup Server.v4p">
+   <PATCH nodename="D:\dropbox\Screenlab\screenLab0x02-VVVV\Common\Network\Boygroup Server.v4p" systemname="Boygroup Server" filename="Z:\projects\common\Network\Boygroup Server.v4p">
    <BOUNDS type="Window" left="6675" top="4440" width="11175" height="8220">
    </BOUNDS>
    <NODE id="9" systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
@@ -635,7 +635,7 @@
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
-   <PIN pinname="Send String" slicecount="1" values="/ClientID" encoded="0">
+   <PIN pinname="Send String" slicecount="1" encoded="0" values="/ClientID">
    </PIN>
    </NODE>
    <LINK srcnodeid="11" srcpinname="ClientID" dstnodeid="16" dstpinname="Input Value" linkstyle="VHV">
@@ -655,7 +655,7 @@
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
-   <PIN pinname="Send String" slicecount="1" values="/Clock" encoded="0">
+   <PIN pinname="Send String" slicecount="1" encoded="0" values="/Clock">
    </PIN>
    </NODE>
    <LINK srcnodeid="17" srcpinname="Time" dstnodeid="18" dstpinname="Input Value">
